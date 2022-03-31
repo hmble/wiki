@@ -94,6 +94,3 @@ git diff | awk '/^\+\*/' | grep -Eo '(http|https)://[a-zA-Z0-9./?=_%:-]*' | grep
 fd --type directory -I -d 3 'node_modules'
 
 
-# dump postgres database
-
-pg_dump -d <DATABASE_NAME> -h localhost -p 5432 -U <USER-NAMEJ> > ~/Desktop/mapl-2022-03-17.sql
