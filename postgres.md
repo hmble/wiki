@@ -8,9 +8,10 @@ postgres=# grant all privileges on database mydb to myuser;
 ```
 
 # Import sql
-
+```
 psql -U USER_ROLE -d DATABASE_NAME < dump.sql
-
+```
 # PG dump
-
+```
 pg_dump -d DATABASE_NAME -h localhost -p 5432 -u USER_ROLE > dump.sql 
+```
