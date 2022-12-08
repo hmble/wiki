@@ -1,0 +1,15 @@
+version: "3.7"
+services:
+  postgres:
+    image: postgres:15.0-alpine
+    restart: always
+
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    ports:
+      - "5440:5432"
+    volumes:
+      - ./pdata:/var/lib/postgresql/data
+      # copy the sql script to create tables
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
